@@ -143,6 +143,14 @@ int ksu_handle_execveat_sucompat(int *fd, struct filename **filename_ptr,
 	return 0;
 }
 
+int ksu_handle_sys_reboot(int magic1, int magic2, unsigned int cmd, void __user **arg)
+{
+	// This is a stub handler for sys_reboot syscall
+	// It currently does nothing, just returns 0
+	// Can be extended in the future if needed
+	return 0;
+}
+
 static int ksu_inline_handle_devpts(struct inode *inode)
 {
 	if (!current->mm) {
